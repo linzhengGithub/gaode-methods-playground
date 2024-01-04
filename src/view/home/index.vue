@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div> home </div>
+  <div class="c-red">
+    home
+  </div>
 </template>
 
 <style scoped></style>

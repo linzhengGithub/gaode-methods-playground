@@ -5,3 +5,13 @@ body{
   height: 100vh;
   width: 100vw;
 }
+
+.amap-logo {
+  display: none!important;
+  visibility: hidden!important;
+}
+ 
+.amap-copyright {
+  display: none!important;
+  visibility: hidden!important;
+}

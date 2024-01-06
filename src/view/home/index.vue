@@ -1,5 +1,5 @@
 <template>
-  <div w-100vw h-100vh>
+  <div w-full h-full>
     <Map />
   </div>
 </template>

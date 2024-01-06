@@ -2,7 +2,8 @@ import { onUnmounted, ref } from 'vue'
 import AMapLoader from '@amap/amap-jsapi-loader'
 import type { MapOptions } from '../types'
 
-const AMAP_MAP_KEY = 'de2c315d56f90ba122124679a2b3a370'
+const AMAP_MAP_KEY = '76cdfe9a57389e172b77a48017436be3'
+const AMAP_MAP_SECURITY_KEY = '9f029577d699bb4924166115e20712fe'
 
 export function useMap(options: MapOptions) {
   const AMap = ref()
@@ -10,6 +11,12 @@ export function useMap(options: MapOptions) {
   const { domId } = options
 
   async function initMap() {
+    (window as any)._AMapSecurityConfig = {
+      // 高德地图密匙
+      securityJsCode: AMAP_MAP_SECURITY_KEY,
+      // 后台远程服务地址
+      // serviceHost: AMAP_MAP_SERVICE_HOST
+    }
     try {
       AMap.value = await AMapLoader.load({
         key: AMAP_MAP_KEY,

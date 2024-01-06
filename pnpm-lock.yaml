@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@amap/amap-jsapi-loader':
+    specifier: ^1.0.1
+    version: registry.npmmirror.com/@amap/amap-jsapi-loader@1.0.1
   pinia:
     specifier: ^2.1.7
     version: registry.npmmirror.com/pinia@2.1.7(typescript@5.2.2)(vue@3.3.11)
@@ -55,6 +58,12 @@ packages:
     version: 1.2.6
     engines: {node: '>=0.10.0'}
     dev: true
+
+  registry.npmmirror.com/@amap/amap-jsapi-loader@1.0.1:
+    resolution: {integrity: sha512-nPyLKt7Ow/ThHLkSvn2etQlUzqxmTVgK7bIgwdBRTg2HK5668oN7xVxkaiRe3YZEzGzfV2XgH5Jmu2T73ljejw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@amap/amap-jsapi-loader/-/amap-jsapi-loader-1.0.1.tgz}
+    name: '@amap/amap-jsapi-loader'
+    version: 1.0.1
+    dev: false
 
   registry.npmmirror.com/@ampproject/remapping@2.2.1:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ampproject/remapping/-/remapping-2.2.1.tgz}

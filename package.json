@@ -11,6 +11,7 @@
     "lint": "eslint --cache ."
   },
   "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
     "pinia": "^2.1.7",
     "vue": "^3.3.11",
     "vue-router": "4"

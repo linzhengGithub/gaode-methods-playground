@@ -1,3 +1,1 @@
-export interface MapOptions {
-  domId?: string
-}
+export type MapOptions = AMap.MapOptions

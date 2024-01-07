@@ -4,12 +4,19 @@ import type { MapOptions } from '../types'
 
 const AMAP_MAP_KEY = '76cdfe9a57389e172b77a48017436be3'
 const AMAP_MAP_SECURITY_KEY = '9f029577d699bb4924166115e20712fe'
+const defaultSetupMap = {
+  viewMode: '3D', // 是否为3D地图模式
+  zoom: 11, // 初始化地图级别
+  center: [116.397428, 39.90923], // 初始化地图中心点位置
+}
 
-export function useMap(options: MapOptions) {
+export function useMap(div: string | HTMLDivElement) {
   const AMap = ref()
   const map = ref()
-  const { domId } = options
 
+  /**
+   * @description 初始化地图
+   */
   async function initMap() {
     (window as any)._AMapSecurityConfig = {
       // 高德地图密匙
@@ -24,18 +31,20 @@ export function useMap(options: MapOptions) {
         plugins: [],
       })
       // 如果传入地图容器id，直接创建地图实例
-      map.value = domId && new AMap.value.Map(domId, {
-        // 设置地图容器id
-        viewMode: '3D', // 是否为3D地图模式
-        zoom: 11, // 初始化地图级别
-        center: [116.397428, 39.90923], // 初始化地图中心点位置
-      })
+      map.value = div && new AMap.value.Map(div, defaultSetupMap)
     }
     catch (error) {
       console.error(error)
     }
   }
-  // 销毁地图
+
+  function setupMap(div: string | HTMLDivElement, opts: MapOptions) {
+    map.value = new AMap.value.Map(div, opts)
+  }
+
+  /**
+   * @description 销毁地图
+   */
   function destroyMap() {
     map.value && map.value.destroy()
   }
@@ -46,5 +55,6 @@ export function useMap(options: MapOptions) {
     map,
     AMap,
     initMap,
+    setupMap,
   }
 }

@@ -8,6 +8,9 @@ dependencies:
   '@amap/amap-jsapi-loader':
     specifier: ^1.0.1
     version: registry.npmmirror.com/@amap/amap-jsapi-loader@1.0.1
+  '@amap/amap-jsapi-types':
+    specifier: ^0.0.13
+    version: registry.npmmirror.com/@amap/amap-jsapi-types@0.0.13
   pinia:
     specifier: ^2.1.7
     version: registry.npmmirror.com/pinia@2.1.7(typescript@5.2.2)(vue@3.3.11)
@@ -63,6 +66,12 @@ packages:
     resolution: {integrity: sha512-nPyLKt7Ow/ThHLkSvn2etQlUzqxmTVgK7bIgwdBRTg2HK5668oN7xVxkaiRe3YZEzGzfV2XgH5Jmu2T73ljejw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@amap/amap-jsapi-loader/-/amap-jsapi-loader-1.0.1.tgz}
     name: '@amap/amap-jsapi-loader'
     version: 1.0.1
+    dev: false
+
+  registry.npmmirror.com/@amap/amap-jsapi-types@0.0.13:
+    resolution: {integrity: sha512-hwp36URjQT9vDTmoUPYph3SEAiOvoUB+PGK0jZeZamgvaxew7rgc1XZWL/HphyMfRAqKwIYsAvXm9v8DTSjjzA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@amap/amap-jsapi-types/-/amap-jsapi-types-0.0.13.tgz}
+    name: '@amap/amap-jsapi-types'
+    version: 0.0.13
     dev: false
 
   registry.npmmirror.com/@ampproject/remapping@2.2.1:

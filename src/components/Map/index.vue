@@ -16,8 +16,8 @@ onMounted(async () => {
     center: defaultMapCenter,
     mapStyle: 'amap://styles/dark',
   })
-  const { addMarker } = useMarker(map.value)
-  addMarker()
+  const { addMarker, createMarker } = useMarker(map.value)
+  addMarker(createMarker())
 })
 </script>
 

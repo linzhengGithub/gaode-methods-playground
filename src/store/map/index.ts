@@ -9,3 +9,8 @@ export const defaultSetupMap = {
   zoom: 11, // 初始化地图级别
   center: defaultMapCenter, // 初始化地图中心点位置
 }
+
+export const defaultSetupMarker = {
+  icon: '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
+  position: defaultMapCenter,
+}

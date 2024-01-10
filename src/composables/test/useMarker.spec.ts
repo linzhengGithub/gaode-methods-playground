@@ -1,7 +1,8 @@
 import AMapLoader from '@amap/amap-jsapi-loader'
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 import { useMarker } from '../useMarker'
-import { AMAP_MAP_KEY } from '@/store'
+import { AMAP_MAP_KEY, defaultSetupMarker } from '@/store'
+import { extend } from '@/utils'
 
 describe('marker test group', () => {
   beforeAll(async () => {
@@ -15,10 +16,19 @@ describe('marker test group', () => {
     vi.unstubAllGlobals()
   })
   it('should be a marker', async () => {
-    const { addMarker, markerList } = useMarker()
+    const { addMarker, markerList, createMarker } = useMarker()
 
-    addMarker()
+    const marker = createMarker()
+    addMarker(marker)
 
     expect(markerList.value.length).toBe(1)
+  })
+
+  it('should can setup marker', () => {
+    const { createMarker } = useMarker()
+
+    const marker = createMarker(extend(defaultSetupMarker, { extData: { id: 'abc' } }))
+
+    expect(marker.getExtData().id).toBe('abc')
   })
 })

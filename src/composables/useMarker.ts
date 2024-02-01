@@ -15,9 +15,15 @@ export function useMarker(map?: AMap.Map) {
     markerList.value.push(marker)
   }
 
+  function removeMarker(marker: AMap.Marker) {
+    marker.setMap(null)
+    markerList.value.splice(markerList.value.indexOf(marker), 1)
+  }
+
   return {
     markerList,
     createMarker,
     addMarker,
+    removeMarker,
   }
 }

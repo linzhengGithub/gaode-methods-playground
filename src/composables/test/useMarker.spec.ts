@@ -24,6 +24,17 @@ describe('marker test group', () => {
     expect(markerList.value.length).toBe(1)
   })
 
+  it('should be find a marker', async () => {
+    const { addMarker, createMarker, findMarker } = useMarker()
+
+    addMarker(createMarker(extend(defaultSetupMarker, { extData: { id: '1' } })))
+    addMarker(createMarker(extend(defaultSetupMarker, { extData: { id: '2' } })))
+
+    const marker = findMarker('1')
+
+    expect(marker?.getExtData().id).toBe('1')
+  })
+
   it('should can setup marker', () => {
     const { createMarker } = useMarker()
 
@@ -32,7 +43,7 @@ describe('marker test group', () => {
     expect(marker.getExtData().id).toBe('abc')
   })
 
-  it('should can change marker options(position)', () => {
+  it('should can change marker position', () => {
     const { createMarker } = useMarker()
 
     const marker = createMarker()

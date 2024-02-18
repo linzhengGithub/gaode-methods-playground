@@ -1,5 +1,5 @@
 import { onUnmounted, ref } from 'vue'
-import AMapLoader from '@amap/amap-jsapi-loader'
+import AMapLoader from '@vuemap/amap-jsapi-loader'
 import type { MapOptions } from '@/types'
 import { AMAP_MAP_KEY, AMAP_MAP_SECURITY_KEY, defaultSetupMap } from '@/store'
 
@@ -21,7 +21,7 @@ export function useMap(div: string | HTMLDivElement) {
       AMap.value = await AMapLoader.load({
         key: AMAP_MAP_KEY,
         version: '2.0',
-        plugins: [],
+        plugins: ['AMap.MarkerCluster'],
       })
       // 如果传入地图容器id，直接创建地图实例
       map.value = div && new AMap.value.Map(div, defaultSetupMap)

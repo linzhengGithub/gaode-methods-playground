@@ -1,11 +1,15 @@
 <template>
-  <div w-full h-full>
-    <Map />
-  </div>
+  <div id="map-container" class="w-full h-full" />
 </template>
 
 <script setup lang="ts">
-import Map from '@/components/Map/index.vue'
+import { onMounted } from 'vue'
+import { useMap } from '@/composables'
+
+const { initMap } = useMap('map-container')
+onMounted(async () => {
+  await initMap()
+})
 </script>
 
 <style scoped></style>

@@ -1,6 +1,6 @@
 import { onUnmounted, ref } from 'vue'
 import AMapLoader from '@amap/amap-jsapi-loader'
-import type { MapOptions } from '../types'
+import type { MapOptions } from '@/types'
 import { AMAP_MAP_KEY, AMAP_MAP_SECURITY_KEY, defaultSetupMap } from '@/store'
 
 export function useMap(div: string | HTMLDivElement) {

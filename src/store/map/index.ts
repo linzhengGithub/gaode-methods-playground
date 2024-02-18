@@ -10,6 +10,7 @@ export const defaultSetupMap = {
   viewMode: '3D', // 是否为3D地图模式
   zoom: 11, // 初始化地图级别
   center: defaultMapCenter, // 初始化地图中心点位置
+  mapStyle: 'amap://styles/dark', // 地图样式
 }
 
 export const defaultSetupMarker: AMap.MarkerOptions = {

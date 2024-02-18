@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import useMassMarks from '../useMassMarks'
+import { useMassMarks } from '../useMassMarks'
 
 describe('massMarks test group', () => {
   it('should be have massMarks', async () => {

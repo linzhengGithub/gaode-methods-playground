@@ -11,8 +11,6 @@
     "lint": "eslint --cache ."
   },
   "dependencies": {
-    "@amap/amap-jsapi-loader": "^1.0.1",
-    "@amap/amap-jsapi-types": "^0.0.13",
     "pinia": "^2.1.7",
     "vue": "^3.3.11",
     "vue-router": "4"
@@ -23,6 +21,8 @@
     "@typescript-eslint/eslint-plugin": "^6.17.0",
     "@vitejs/plugin-vue": "^4.5.2",
     "@vue/test-utils": "^2.4.3",
+    "@vuemap/amap-jsapi-loader": "^1.0.4",
+    "@vuemap/amap-jsapi-types": "^0.0.17",
     "eslint": "^8.56.0",
     "happy-dom": "^12.10.3",
     "typescript": "^5.2.2",

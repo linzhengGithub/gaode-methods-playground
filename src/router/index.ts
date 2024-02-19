@@ -3,6 +3,7 @@ import Home from '@/view/home/index.vue'
 import DefaultMarker from '@/view/marker/default/index.vue'
 import MassMarks from '@/view/mass/massMarks/index.vue'
 import MarkerCluster from '@/view/mass/markerCluster/index.vue'
+import Polyline from '@/view/line/polyline/index.vue'
 
 export const router = createRouter({
   history: createWebHashHistory(),
@@ -30,6 +31,11 @@ export const router = createRouter({
       path: '/mass/markerCluster',
       component: MarkerCluster,
       name: 'MarkerCluster',
+    },
+    {
+      path: '/line/polyline',
+      component: Polyline,
+      name: 'Polyline',
     },
   ],
 })

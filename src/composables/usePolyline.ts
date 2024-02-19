@@ -3,6 +3,7 @@ import { extend } from '@/utils'
 
 export function usePolyline(map?: AMap.Map) {
   const polylineList = ref<AMap.Polyline[]>([])
+  const currentEditPolyline = ref<AMap.PolylineEditor>()
 
   function generatePolylinePath(path: number[][]) {
     const polylinePath = path.map(p => new AMap.LngLat(p[0], p[1]))
@@ -24,10 +25,19 @@ export function usePolyline(map?: AMap.Map) {
 
     polylineList.value.push(polyline)
     map?.add(polyline)
+    return polyline
+  }
+
+  function setEditPolyline(polyline: AMap.Polyline) {
+    currentEditPolyline.value = new AMap.PolylineEditor(map!, polyline)
+    currentEditPolyline.value.setTarget(polyline)
+    currentEditPolyline.value.open()
   }
 
   return {
     polylineList,
+    currentEditPolyline,
     createPolyline,
+    setEditPolyline,
   }
 }

@@ -19,6 +19,7 @@ onMounted(async () => {
   const marker = createMarker()
   addMarker(marker)
   marker.setIcon(icon)
+  map.value.setFitView()
 })
 </script>
 

@@ -42,6 +42,7 @@ onMounted(async () => {
     marker.setIcon(icon)
   }
   createMarkerCluster({ data: points, renderMarker, renderClusterMarker })
+  map.value.setFitView()
 })
 </script>
 

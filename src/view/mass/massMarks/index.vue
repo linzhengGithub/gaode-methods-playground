@@ -22,6 +22,7 @@ onMounted(async () => {
   await initMap()
   const { createMassMarks } = useMassMarks(map.value)
   createMassMarks(data as unknown as AMap.MassData[])
+  map.value.setFitView()
 })
 </script>
 

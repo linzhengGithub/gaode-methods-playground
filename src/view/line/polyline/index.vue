@@ -1,7 +1,13 @@
 <template>
   <div class="h-full">
     <button @click="handlePolyline">
-      handle
+      handlePolyline
+    </button>
+    <button @click="handlePolyline1">
+      handlePolyline1
+    </button>
+    <button @click="createEditor">
+      createEditor
     </button>
     <button @click="close">
       closeEdit
@@ -18,9 +24,11 @@ const { initMap, map } = useMap('map-container')
 onMounted(async () => {
   await initMap()
   createPolyline()
+  otherPolyline()
 })
 
 const polyline = ref()
+const polyline1 = ref()
 const currentEditor = ref()
 
 function createPolyline() {
@@ -33,10 +41,36 @@ function createPolyline() {
   ]
   polyline.value = createPolyline(path)
 }
+
 function handlePolyline() {
   const { currentEditPolyline, setEditPolyline } = usePolyline(map.value)
+  close()
   setEditPolyline(polyline.value)
   currentEditor.value = currentEditPolyline.value
+}
+
+function handlePolyline1() {
+  const { currentEditPolyline, setEditPolyline } = usePolyline(map.value)
+  close()
+  setEditPolyline(polyline1.value)
+  currentEditor.value = currentEditPolyline.value
+}
+
+function otherPolyline() {
+  const { createPolyline } = usePolyline(map.value)
+  const path = [
+    [116.362209, 39.887487],
+    [116.422897, 39.878002],
+    [116.372105, 39.90651],
+    [116.428945, 39.89663],
+  ]
+  polyline1.value = createPolyline(path)
+}
+
+function createEditor() {
+  const { generateEditor } = usePolyline(map.value)
+  close()
+  currentEditor.value = generateEditor()
 }
 
 function close() {

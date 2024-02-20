@@ -34,10 +34,24 @@ export function usePolyline(map?: AMap.Map) {
     currentEditPolyline.value.open()
   }
 
+  function generateEditor(opts?: any) {
+    currentEditPolyline.value = new AMap.PolylineEditor(map!, undefined, extend({
+      createOptions: {
+        borderWeight: 2,
+        strokeColor: 'red',
+        lineJoin: 'round',
+      },
+    }, opts))
+    currentEditPolyline.value.setTarget()
+    currentEditPolyline.value.open()
+    return currentEditPolyline.value
+  }
+
   return {
     polylineList,
     currentEditPolyline,
     createPolyline,
     setEditPolyline,
+    generateEditor,
   }
 }

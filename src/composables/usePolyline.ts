@@ -28,10 +28,23 @@ export function usePolyline(map?: AMap.Map) {
     return polyline
   }
 
+  function findPolylineByKey(polylines: AMap.Polyline[], key: string, value: any) {
+    return polylines.find(polyline => polyline.getExtData()[key] === value)
+  }
+
+  function removePolylines(polylines: AMap.Polyline[], polylineStore?: AMap.Polyline[]) {
+    if (polylineStore?.length) {
+      polylines.forEach((polyline) => {
+        // const index = polylineStore.findIndex(line => line.getExtData().id === polyline.getExtData().id)
+        polylineStore.splice(polylineStore.indexOf(polyline), 1)
+      })
+    }
+    map?.remove(polylines)
+  }
+
   function setEditPolyline(polyline: AMap.Polyline) {
     currentEditPolyline.value = new AMap.PolylineEditor(map!, polyline)
-    currentEditPolyline.value.setTarget(polyline)
-    currentEditPolyline.value.open()
+    currentEditPolyline.value?.open()
   }
 
   function generateEditor(opts?: any) {
@@ -51,6 +64,8 @@ export function usePolyline(map?: AMap.Map) {
     polylineList,
     currentEditPolyline,
     createPolyline,
+    findPolylineByKey,
+    removePolylines,
     setEditPolyline,
     generateEditor,
   }

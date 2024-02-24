@@ -10,4 +10,15 @@ describe('circle test group', () => {
 
     expect(circleList.length).toBe(1)
   })
+
+  it.skip('set circle status is edit', () => {
+    const { createCircle, currentEditCircle, setEditCircle } = useCircle()
+    const center: [number, number] = [116.406315, 39.908775]
+
+    const circle = createCircle(center)
+
+    setEditCircle(circle)
+
+    expect(currentEditCircle.value?.getTarget()?.getExtData().id).toBe(circle.getExtData().id)
+  })
 })

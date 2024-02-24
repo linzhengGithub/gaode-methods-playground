@@ -21,7 +21,7 @@ export function useMap(div: string | HTMLDivElement) {
       AMap.value = await AMapLoader.load({
         key: AMAP_MAP_KEY,
         version: '2.0',
-        plugins: ['AMap.MarkerCluster', 'AMap.PolylineEditor', 'AMap.PolygonEditor'],
+        plugins: ['AMap.MarkerCluster', 'AMap.PolylineEditor', 'AMap.PolygonEditor', 'AMap.CircleEditor'],
       })
       // 如果传入地图容器id，直接创建地图实例
       map.value = div && new AMap.value.Map(div, defaultSetupMap)

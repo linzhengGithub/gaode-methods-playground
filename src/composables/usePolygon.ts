@@ -23,6 +23,19 @@ export function usePolygon(map?: AMap.Map) {
     return polygon
   }
 
+  function findPolygonByKey(polygons: AMap.Polygon[], key: string, value: any) {
+    return polygons.find(polygon => polygon.getExtData()[key] === value)
+  }
+
+  function removePolygons(polygons: AMap.Polygon[], polygonStore?: AMap.Polygon[]) {
+    if (polygonStore?.length) {
+      polygons.forEach((polygon) => {
+        polygonStore.splice(polygonStore.indexOf(polygon), 1)
+      })
+    }
+    map?.remove(polygons)
+  }
+
   function setEditPolyPolygon(polygon: AMap.Polygon, opts?: any) {
     currentEditPolygon.value = new AMap.PolygonEditor(map!, polygon, opts)
     currentEditPolygon.value?.open()
@@ -44,6 +57,8 @@ export function usePolygon(map?: AMap.Map) {
     polygonList,
     currentEditPolygon,
     createPolygon,
+    findPolygonByKey,
+    removePolygons,
     setEditPolyPolygon,
     generateEditor,
   }

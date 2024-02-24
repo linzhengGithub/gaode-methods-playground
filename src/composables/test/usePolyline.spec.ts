@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { usePolyline } from '@/composables'
 
-describe.only('polyline test group', () => {
+describe('polyline test group', () => {
   it('should be polyline', () => {
     const { createPolyline, polylineList } = usePolyline()
 
-    const path = [
+    const path: [number, number][] = [
       [116.368904, 39.913423],
       [116.382122, 39.901176],
       [116.387271, 39.912501],
@@ -19,7 +19,7 @@ describe.only('polyline test group', () => {
   it('should find this polyline', () => {
     const { createPolyline, findPolylineByKey, polylineList } = usePolyline()
 
-    const path = [
+    const path: [number, number][] = [
       [116.368904, 39.913423],
       [116.382122, 39.901176],
       [116.387271, 39.912501],
@@ -36,14 +36,14 @@ describe.only('polyline test group', () => {
   it('should be remove polyline', () => {
     const { createPolyline, removePolylines, polylineList } = usePolyline()
 
-    const path1 = [
+    const path1: [number, number][] = [
       [116.368904, 39.913423],
       [116.382122, 39.901176],
       [116.387271, 39.912501],
       [116.398258, 39.9046],
     ]
 
-    const path2 = [
+    const path2: [number, number][] = [
       [116.368904, 39.913423],
       [116.382122, 39.901176],
       [116.387271, 39.912501],
@@ -61,7 +61,7 @@ describe.only('polyline test group', () => {
   it.skip('should be edit polyline', () => {
     const { createPolyline, currentEditPolyline, setEditPolyline } = usePolyline()
 
-    const path = [
+    const path: [number, number][] = [
       [116.368904, 39.913423],
       [116.382122, 39.901176],
       [116.387271, 39.912501],

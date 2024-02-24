@@ -1,18 +1,15 @@
 import { ref } from 'vue'
 import { extend } from '@/utils'
 
+type Path = Array<[number, number]> | Array<Array<[number, number]>>
+
 export function usePolyline(map?: AMap.Map) {
   const polylineList = ref<AMap.Polyline[]>([])
   const currentEditPolyline = ref<AMap.PolylineEditor>()
 
-  function generatePolylinePath(path: number[][]) {
-    const polylinePath = path.map(p => new AMap.LngLat(p[0], p[1]))
-    return polylinePath
-  }
-
-  function createPolyline(path: number[][], opts?: AMap.PolylineOptions) {
+  function createPolyline(path: Path, opts?: AMap.PolylineOptions) {
     const polyline = new AMap.Polyline({
-      path: generatePolylinePath(path),
+      path,
       ...extend(
         {
           borderWeight: 2, // 线条宽度，默认为1
@@ -35,16 +32,16 @@ export function usePolyline(map?: AMap.Map) {
   function removePolylines(polylines: AMap.Polyline[], polylineStore?: AMap.Polyline[]) {
     if (polylineStore?.length) {
       polylines.forEach((polyline) => {
-        // const index = polylineStore.findIndex(line => line.getExtData().id === polyline.getExtData().id)
         polylineStore.splice(polylineStore.indexOf(polyline), 1)
       })
     }
     map?.remove(polylines)
   }
 
-  function setEditPolyline(polyline: AMap.Polyline) {
-    currentEditPolyline.value = new AMap.PolylineEditor(map!, polyline)
+  function setEditPolyline(polyline: AMap.Polyline, opts?: any) {
+    currentEditPolyline.value = new AMap.PolylineEditor(map!, polyline, opts)
     currentEditPolyline.value?.open()
+    return currentEditPolyline.value
   }
 
   function generateEditor(opts?: any) {

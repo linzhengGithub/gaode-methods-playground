@@ -33,7 +33,7 @@ const currentEditor = ref()
 
 function createPolyline() {
   const { createPolyline } = usePolyline(map.value)
-  const path = [
+  const path: [number, number][] = [
     [116.368904, 39.913423],
     [116.382122, 39.901176],
     [116.387271, 39.912501],
@@ -58,7 +58,7 @@ function handlePolyline1() {
 
 function otherPolyline() {
   const { createPolyline } = usePolyline(map.value)
-  const path = [
+  const path: [number, number][] = [
     [116.362209, 39.887487],
     [116.422897, 39.878002],
     [116.372105, 39.90651],

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { usePolygon } from '../usePolygon'
 
-describe.only('polygon test group', () => {
+describe('polygon test group', () => {
   it('should be a polygon', () => {
     const { createPolygon, polygonList } = usePolygon()
     const path: [number, number][] = [

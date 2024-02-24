@@ -58,7 +58,7 @@ describe('polygon test group', () => {
   })
 
   it.skip('set polygon status is edit', () => {
-    const { createPolygon, currentEditPolygon, setEditPolyPolygon } = usePolygon()
+    const { createPolygon, currentEditPolygon, setEditPolygon } = usePolygon()
     const path: [number, number][] = [
       [116.398258, 39.9046],
       [116.387271, 39.912501],
@@ -66,7 +66,7 @@ describe('polygon test group', () => {
     ]
     const polygon = createPolygon(path)
 
-    setEditPolyPolygon(polygon)
+    setEditPolygon(polygon)
 
     expect(currentEditPolygon.value?.getTarget()?.getExtData().id).toBe(polygon.getExtData().id)
   })

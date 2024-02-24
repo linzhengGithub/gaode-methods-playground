@@ -1,7 +1,7 @@
 <template>
   <div class="h-full">
     <button @click="handlePolygon">
-      handlePolyline
+      handlePolygon
     </button>
     <button @click="createEditor">
       createEditor
@@ -37,9 +37,9 @@ function createPolygon() {
 }
 
 function handlePolygon() {
-  const { setEditPolyPolygon } = usePolygon(map.value)
+  const { setEditPolygon } = usePolygon(map.value)
   close()
-  currentEditPolygon.value = setEditPolyPolygon(polygon.value)
+  currentEditPolygon.value = setEditPolygon(polygon.value)
 }
 function close() {
   currentEditPolygon.value?.close()

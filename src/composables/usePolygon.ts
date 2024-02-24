@@ -36,7 +36,7 @@ export function usePolygon(map?: AMap.Map) {
     map?.remove(polygons)
   }
 
-  function setEditPolyPolygon(polygon: AMap.Polygon, opts?: any) {
+  function setEditPolygon(polygon: AMap.Polygon, opts?: any) {
     currentEditPolygon.value = new AMap.PolygonEditor(map!, polygon, opts)
     currentEditPolygon.value?.open()
     return currentEditPolygon.value
@@ -59,7 +59,7 @@ export function usePolygon(map?: AMap.Map) {
     createPolygon,
     findPolygonByKey,
     removePolygons,
-    setEditPolyPolygon,
+    setEditPolygon,
     generateEditor,
   }
 };

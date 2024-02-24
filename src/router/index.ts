@@ -5,6 +5,7 @@ import MassMarks from '@/view/mass/massMarks/index.vue'
 import MarkerCluster from '@/view/mass/markerCluster/index.vue'
 import Polyline from '@/view/line/polyline/index.vue'
 import Polygon from '@/view/shape/polygon/index.vue'
+import Circle from '@/view/shape/circle/index.vue'
 
 export const router = createRouter({
   history: createWebHashHistory(),
@@ -42,6 +43,11 @@ export const router = createRouter({
       path: '/shape/polygon',
       component: Polygon,
       name: 'Polygon',
+    },
+    {
+      path: '/shape/circle',
+      component: Circle,
+      name: 'Circle',
     },
   ],
 })

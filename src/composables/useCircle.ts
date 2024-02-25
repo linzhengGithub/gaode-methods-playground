@@ -28,6 +28,19 @@ export function useCircle(map?: AMap.Map) {
     return circle
   }
 
+  function findCircleByKey(circles: AMap.Circle[], key: string, value: any) {
+    return circles.find(circle => circle.getExtData()[key] === value)
+  }
+
+  function removeCircles(circles: AMap.Circle[], circleStore?: AMap.Circle[]) {
+    if (circleStore?.length) {
+      circles.forEach((circle) => {
+        circleStore.splice(circleStore.indexOf(circle), 1)
+      })
+    }
+    map?.remove(circles)
+  }
+
   function setEditCircle(circle: AMap.Circle, opts?: any) {
     currentEditCircle.value = new AMap.CircleEditor(map!, circle, opts)
     currentEditCircle.value?.open()
@@ -60,5 +73,7 @@ export function useCircle(map?: AMap.Map) {
     createCircle,
     setEditCircle,
     generateEditor,
+    findCircleByKey,
+    removeCircles,
   }
 }

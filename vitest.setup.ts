@@ -6,7 +6,7 @@ beforeAll(async () => {
   vi.stubGlobal('AMap', await AMapLoader.load({
     key: AMAP_MAP_KEY,
     version: '2.0',
-    plugins: ['AMap.MarkerCluster', 'AMap.PolylineEditor', 'AMap.PolygonEditor', 'AMap.CircleEditor'],
+    plugins: ['AMap.MarkerCluster', 'AMap.PolylineEditor', 'AMap.PolygonEditor', 'AMap.CircleEditor', 'AMap.RectangleEditor'],
   }))
 })
 

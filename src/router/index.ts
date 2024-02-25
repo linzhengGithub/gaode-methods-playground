@@ -7,6 +7,7 @@ import Polyline from '@/view/line/polyline/index.vue'
 import Polygon from '@/view/shape/polygon/index.vue'
 import Circle from '@/view/shape/circle/index.vue'
 import Rectangle from '@/view/shape/rectangle/index.vue'
+import Ellipse from '@/view/shape/ellipse/index.vue'
 
 export const router = createRouter({
   history: createWebHashHistory(),
@@ -54,6 +55,11 @@ export const router = createRouter({
       path: '/shape/rectangle',
       component: Rectangle,
       name: 'Rectangle',
+    },
+    {
+      path: '/shape/ellipse',
+      component: Ellipse,
+      name: 'Ellipse',
     },
   ],
 })

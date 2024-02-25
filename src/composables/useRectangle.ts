@@ -27,8 +27,21 @@ export function useRectangle(map?: AMap.Map) {
     return rectangle
   }
 
-  function setEditRectangle(polygon: AMap.Rectangle, opts?: any) {
-    currentEditRectangle.value = new AMap.RectangleEditor(map!, polygon, opts)
+  function findRectangleByKey(rectangles: AMap.Rectangle[], key: string, value: any) {
+    return rectangles.find(rectangle => rectangle.getExtData()[key] === value)
+  }
+
+  function removeRectangles(rectangles: AMap.Rectangle[], rectangleStore?: AMap.Rectangle[]) {
+    if (rectangleStore?.length) {
+      rectangles.forEach((rectangle) => {
+        rectangleStore.splice(rectangleStore.indexOf(rectangle), 1)
+      })
+    }
+    map?.remove(rectangles)
+  }
+
+  function setEditRectangle(rectangle: AMap.Rectangle, opts?: any) {
+    currentEditRectangle.value = new AMap.RectangleEditor(map!, rectangle, opts)
     currentEditRectangle.value?.open()
     return currentEditRectangle.value
   }
@@ -56,6 +69,8 @@ export function useRectangle(map?: AMap.Map) {
     rectangleList,
     currentEditRectangle,
     createRectangle,
+    findRectangleByKey,
+    removeRectangles,
     setEditRectangle,
     generateEditor,
   }

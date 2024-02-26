@@ -28,8 +28,21 @@ export function useEllipse(map?: AMap.Map) {
     return ellipse
   }
 
-  function setEditEllipse(polyline: AMap.Ellipse, opts?: any) {
-    currentEditEllipse.value = new AMap.EllipseEditor(map!, polyline, opts)
+  function findEllipseByKey(ellipses: AMap.Ellipse[], key: string, value: any) {
+    return ellipses.find(ellipse => ellipse.getExtData()[key] === value)
+  }
+
+  function removeEllipses(ellipses: AMap.Ellipse[], ellipseStore?: AMap.Ellipse[]) {
+    if (ellipseStore?.length) {
+      ellipses.forEach((ellipse) => {
+        ellipseStore.splice(ellipseStore.indexOf(ellipse), 1)
+      })
+    }
+    map?.remove(ellipses)
+  }
+
+  function setEditEllipse(ellipse: AMap.Ellipse, opts?: any) {
+    currentEditEllipse.value = new AMap.EllipseEditor(map!, ellipse, opts)
     currentEditEllipse.value?.open()
     return currentEditEllipse.value
   }
@@ -58,6 +71,8 @@ export function useEllipse(map?: AMap.Map) {
     ellipseList,
     currentEditEllipse,
     createEllipse,
+    findEllipseByKey,
+    removeEllipses,
     setEditEllipse,
     generateEditor,
   }

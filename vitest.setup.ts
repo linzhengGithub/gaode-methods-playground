@@ -13,6 +13,7 @@ beforeAll(async () => {
       'AMap.CircleEditor',
       'AMap.RectangleEditor',
       'AMap.EllipseEditor',
+      'AMap.Weather',
     ],
   }))
 })

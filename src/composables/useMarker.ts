@@ -1,12 +1,13 @@
 import { ref } from 'vue'
 import { defaultSetupMarker } from '@/store'
+import { extend } from '@/utils'
 
 export function useMarker(map?: AMap.Map) {
   const markerList = ref<AMap.Marker[]>([])
 
-  function createMarker(opts: AMap.MarkerOptions = defaultSetupMarker) {
+  function createMarker(opts?: AMap.MarkerOptions) {
     const marker = ref<AMap.Marker>()
-    marker.value = new AMap.Marker(opts)
+    marker.value = new AMap.Marker(extend(defaultSetupMarker, opts))
     return marker.value
   }
 

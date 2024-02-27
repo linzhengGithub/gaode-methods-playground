@@ -28,6 +28,12 @@ export function useMap(div: string | HTMLDivElement) {
           'AMap.CircleEditor',
           'AMap.RectangleEditor',
           'AMap.EllipseEditor',
+          'AMap.ToolBar',
+          'AMap.Scale',
+          'AMap.HawkEye',
+          'AMap.MapType',
+          'AMap.Geolocation',
+          'AMap.ControlBar',
         ],
       })
       // 如果传入地图容器id，直接创建地图实例

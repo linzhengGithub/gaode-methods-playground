@@ -9,6 +9,7 @@ import Circle from '@/view/shape/circle/index.vue'
 import Rectangle from '@/view/shape/rectangle/index.vue'
 import Ellipse from '@/view/shape/ellipse/index.vue'
 import InfoWindow from '@/view/tool/infoWindow/index.vue'
+import Control from '@/view/tool/control/index.vue'
 
 export const router = createRouter({
   history: createWebHashHistory(),
@@ -66,6 +67,11 @@ export const router = createRouter({
       path: '/tool/infoWindow',
       component: InfoWindow,
       name: 'InfoWindow',
+    },
+    {
+      path: '/tool/control',
+      component: Control,
+      name: 'Control',
     },
   ],
 })

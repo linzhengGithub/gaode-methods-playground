@@ -5,7 +5,6 @@ function checkInWeather(weather: AMap.Weather | undefined) {
     return weather
 }
 
-// const weather: AMap.Weather | null = null
 export function useWeather() {
   /**
    * @description 查询实时天气信息

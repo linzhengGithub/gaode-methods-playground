@@ -35,7 +35,7 @@ export function useMap(div: string | HTMLDivElement) {
           'AMap.Geolocation',
           'AMap.ControlBar',
           'AMap.Weather',
-          'AMap. Autocomplete',
+          'AMap.AutoComplete',
         ],
       })
       // 如果传入地图容器id，直接创建地图实例

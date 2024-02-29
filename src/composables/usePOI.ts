@@ -1,8 +1,9 @@
 import type { AutoCompleteSearchCallbackResult } from '@vuemap/amap-jsapi-types/plugins/AutoComplete'
+import { extend } from '@/utils'
 
 export function usePOI() {
-  function createAutoComplete(opts: AMap.AutoCompleteOptions) {
-    return new AMap.AutoComplete(opts)
+  function createAutoComplete(opts?: AMap.AutoCompleteOptions) {
+    return new AMap.AutoComplete(extend({ city: '全国' }, opts))
   }
 
   function searchKeywordAuto(

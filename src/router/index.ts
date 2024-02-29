@@ -11,6 +11,7 @@ import Ellipse from '@/view/shape/ellipse/index.vue'
 import InfoWindow from '@/view/tool/infoWindow/index.vue'
 import Control from '@/view/tool/control/index.vue'
 import Weather from '@/view/tool/weather/index.vue'
+import POI from '@/view/tool/poi/index.vue'
 
 export const router = createRouter({
   history: createWebHashHistory(),
@@ -78,6 +79,11 @@ export const router = createRouter({
       path: '/tool/weather',
       component: Weather,
       name: 'Weather',
+    },
+    {
+      path: '/tool/poi',
+      component: POI,
+      name: 'POI',
     },
   ],
 })

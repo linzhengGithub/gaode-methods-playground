@@ -9,7 +9,7 @@ export function usePolyline(map?: AMap.Map) {
 
   function createPolyline(path: Path, opts?: AMap.PolylineOptions) {
     const polyline = new AMap.Polyline({
-      path,
+      path: path.length ? path : undefined,
       ...extend(
         {
           borderWeight: 2, // 线条宽度，默认为1

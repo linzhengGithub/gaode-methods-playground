@@ -16,6 +16,7 @@ beforeAll(async () => {
       'AMap.Weather',
       'AMap.Autocomplete',
       'AMap.MouseTool',
+      'AMap.MoveAnimation',
     ],
   }))
 })

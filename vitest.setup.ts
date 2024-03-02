@@ -14,7 +14,8 @@ beforeAll(async () => {
       'AMap.RectangleEditor',
       'AMap.EllipseEditor',
       'AMap.Weather',
-      'AMap. Autocomplete',
+      'AMap.Autocomplete',
+      'AMap.MouseTool',
     ],
   }))
 })

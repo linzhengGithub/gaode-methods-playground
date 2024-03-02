@@ -36,6 +36,7 @@ export function useMap(div: string | HTMLDivElement) {
           'AMap.ControlBar',
           'AMap.Weather',
           'AMap.AutoComplete',
+          'AMap.MouseTool',
         ],
       })
       // 如果传入地图容器id，直接创建地图实例

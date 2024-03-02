@@ -12,6 +12,7 @@ import InfoWindow from '@/view/tool/infoWindow/index.vue'
 import Control from '@/view/tool/control/index.vue'
 import Weather from '@/view/tool/weather/index.vue'
 import POI from '@/view/tool/poi/index.vue'
+import MouseTool from '@/view/tool/mouseTool/index.vue'
 
 export const router = createRouter({
   history: createWebHashHistory(),
@@ -84,6 +85,11 @@ export const router = createRouter({
       path: '/tool/poi',
       component: POI,
       name: 'POI',
+    },
+    {
+      path: '/tool/mouseTool',
+      component: MouseTool,
+      name: 'MouseTool',
     },
   ],
 })
